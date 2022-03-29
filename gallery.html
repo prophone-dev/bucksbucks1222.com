@@ -382,9 +382,9 @@
                                 
                                     <a
                                         href=" index "
-                                        class=" 'border-secondary'  group pb-5 pt-6 inline-flex items-center px-1 transition text-sm font-medium  text-gray-500  focus:ring-2 focus:outline-none ring-primary ring-opacity-75 ring-offset-2"
+                                        class=" border-transparent hover:border-gray-300 hover:text-gray-700 text-gray-500  group pb-5 pt-6 inline-flex items-center px-1 transition text-sm font-medium  text-gray-500  focus:ring-2 focus:outline-none ring-primary ring-opacity-75 ring-offset-2"
                                     >
-                                        Home
+                                        Home 
                                     </a>
                                 <!-- </else> -->
                                 
@@ -550,9 +550,9 @@
                                 
                                     <a
                                         href="  "
-                                        class=" 'border-transparent hover:border-gray-300 hover:text-gray-700 text-gray-500'  group pb-5 pt-6 inline-flex items-center px-1 transition text-sm font-medium  text-gray-500  focus:ring-2 focus:outline-none ring-primary ring-opacity-75 ring-offset-2"
+                                        class=" border-transparent hover:border-gray-300 hover:text-gray-700 text-gray-500  group pb-5 pt-6 inline-flex items-center px-1 transition text-sm font-medium  text-gray-500  focus:ring-2 focus:outline-none ring-primary ring-opacity-75 ring-offset-2"
                                     >
-                                        Galleries
+                                        Galleries 
                                     </a>
                                 <!-- </else> -->
                                 
@@ -574,9 +574,9 @@
                                 
                                     <a
                                         href=" reviews "
-                                        class=" 'border-transparent hover:border-gray-300 hover:text-gray-700 text-gray-500'  group pb-5 pt-6 inline-flex items-center px-1 transition text-sm font-medium  text-gray-500  focus:ring-2 focus:outline-none ring-primary ring-opacity-75 ring-offset-2"
+                                        class=" border-transparent hover:border-gray-300 hover:text-gray-700 text-gray-500  group pb-5 pt-6 inline-flex items-center px-1 transition text-sm font-medium  text-gray-500  focus:ring-2 focus:outline-none ring-primary ring-opacity-75 ring-offset-2"
                                     >
-                                        Reviews
+                                        Reviews 
                                     </a>
                                 <!-- </else> -->
                                 
@@ -679,7 +679,7 @@
                                 
                                     <a
                                         href=" index "
-                                        class=" 'text-secondary'  block px-3 py-2 text-base font-medium rounded-md border-secondary transition"
+                                        class=" 'text-gray-700'  block px-3 py-2 text-base font-medium rounded-md border-secondary transition"
                                         >Home</a
                                     >
                                 
@@ -892,7 +892,7 @@
 <div
     x-data="{
         activeImage: 0,
-        amountOfImages: 11,
+        amountOfImages: 15,
         next() {
             if (this.activeImage < this.amountOfImages - 1)
                 this.activeImage ++;
@@ -934,9 +934,9 @@
                 <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                     <button @click="activeImage = 1; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
                         <div class="aspect-w-3 aspect-h-2">
-                            <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/7ab2b827-e898-4510-a63d-5781a51e0a3c.mp4" alt="" /> -->
+                            <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/b8cd88aa-665a-461e-9b6f-d69f13107ef8.mp4" alt="" /> -->
                             
-                                <video preload="metadata" class="rounded shadow-md object-cover w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/7ab2b827-e898-4510-a63d-5781a51e0a3c.mp4#t=0.5" >
+                                <video preload="metadata" class="rounded shadow-md object-cover w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/b8cd88aa-665a-461e-9b6f-d69f13107ef8.mp4#t=0.5" >
                                 </video>
                             
                         </div>
@@ -975,6 +975,88 @@
                 <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
                     <button @click="activeImage = 3; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
                         <div class="aspect-w-3 aspect-h-2">
+                            <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/7ab2b827-e898-4510-a63d-5781a51e0a3c.mp4" alt="" /> -->
+                            
+                                <video preload="metadata" class="rounded shadow-md object-cover w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/7ab2b827-e898-4510-a63d-5781a51e0a3c.mp4#t=0.5" >
+                                </video>
+                            
+                        </div>
+
+                        <div class="space-y-1 text-lg font-medium leading-6">
+                            <p class="line-clamp-3"></p>
+                            <h3 class="text-primary"></h3>
+                        </div>
+                    </button>
+                </div>
+            </li>
+        
+            <!-- Single Item - We only want to show 3 items on mobile so we check the current index and attach a hidden class if necessary -->
+            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
+                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
+                    <button @click="activeImage = 4; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
+                        <div class="aspect-w-3 aspect-h-2">
+                            <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/58e48252-167c-45cc-b520-ab6b747bbb37.png" alt="" /> -->
+                             
+                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/58e48252-167c-45cc-b520-ab6b747bbb37.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/> 
+                                <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/58e48252-167c-45cc-b520-ab6b747bbb37.png" alt="" /> -->
+                                <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/x/media/58e48252-167c-45cc-b520-ab6b747bbb37.png" alt="" /> -->
+                            
+                        </div>
+
+                        <div class="space-y-1 text-lg font-medium leading-6">
+                            <p class="line-clamp-3"></p>
+                            <h3 class="text-primary"></h3>
+                        </div>
+                    </button>
+                </div>
+            </li>
+        
+            <!-- Single Item - We only want to show 3 items on mobile so we check the current index and attach a hidden class if necessary -->
+            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
+                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
+                    <button @click="activeImage = 5; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
+                        <div class="aspect-w-3 aspect-h-2">
+                            <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/a8459910-2d98-4f23-b59e-62ff7c2b2b4c.png" alt="" /> -->
+                             
+                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/a8459910-2d98-4f23-b59e-62ff7c2b2b4c.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/> 
+                                <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/a8459910-2d98-4f23-b59e-62ff7c2b2b4c.png" alt="" /> -->
+                                <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/x/media/a8459910-2d98-4f23-b59e-62ff7c2b2b4c.png" alt="" /> -->
+                            
+                        </div>
+
+                        <div class="space-y-1 text-lg font-medium leading-6">
+                            <p class="line-clamp-3"></p>
+                            <h3 class="text-primary"></h3>
+                        </div>
+                    </button>
+                </div>
+            </li>
+        
+            <!-- Single Item - We only want to show 3 items on mobile so we check the current index and attach a hidden class if necessary -->
+            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
+                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
+                    <button @click="activeImage = 6; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
+                        <div class="aspect-w-3 aspect-h-2">
+                            <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/09f127a1-dd40-4382-97a9-5f0719a28387.mp4" alt="" /> -->
+                            
+                                <video preload="metadata" class="rounded shadow-md object-cover w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/09f127a1-dd40-4382-97a9-5f0719a28387.mp4#t=0.5" >
+                                </video>
+                            
+                        </div>
+
+                        <div class="space-y-1 text-lg font-medium leading-6">
+                            <p class="line-clamp-3"></p>
+                            <h3 class="text-primary"></h3>
+                        </div>
+                    </button>
+                </div>
+            </li>
+        
+            <!-- Single Item - We only want to show 3 items on mobile so we check the current index and attach a hidden class if necessary -->
+            <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
+                <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
+                    <button @click="activeImage = 7; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
+                        <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/392b228c-d55e-47dd-bf22-913fa7cb61f9.png" alt="" /> -->
                              
                                 <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/392b228c-d55e-47dd-bf22-913fa7cb61f9.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/> 
@@ -994,7 +1076,7 @@
             <!-- Single Item - We only want to show 3 items on mobile so we check the current index and attach a hidden class if necessary -->
             <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
                 <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button @click="activeImage = 4; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
+                    <button @click="activeImage = 8; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/78b3485d-4928-41f6-9ed2-0e95d5f869d7.png" alt="" /> -->
                              
@@ -1015,7 +1097,7 @@
             <!-- Single Item - We only want to show 3 items on mobile so we check the current index and attach a hidden class if necessary -->
             <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
                 <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button @click="activeImage = 5; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
+                    <button @click="activeImage = 9; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/77703d0b-05d5-4a90-80d7-f26e8f400058.png" alt="" /> -->
                              
@@ -1036,7 +1118,7 @@
             <!-- Single Item - We only want to show 3 items on mobile so we check the current index and attach a hidden class if necessary -->
             <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
                 <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button @click="activeImage = 6; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
+                    <button @click="activeImage = 10; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/66e22c28-e0f7-4054-b1b6-8990f9e11762.png" alt="" /> -->
                              
@@ -1057,7 +1139,7 @@
             <!-- Single Item - We only want to show 3 items on mobile so we check the current index and attach a hidden class if necessary -->
             <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
                 <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button @click="activeImage = 7; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
+                    <button @click="activeImage = 11; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/50ba0ed4-fa51-47b7-b0cc-19a6f4cd5f1a.png" alt="" /> -->
                              
@@ -1078,7 +1160,7 @@
             <!-- Single Item - We only want to show 3 items on mobile so we check the current index and attach a hidden class if necessary -->
             <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
                 <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button @click="activeImage = 8; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
+                    <button @click="activeImage = 12; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/e3118af2-635f-46e7-a7a6-f0ba73945cfc.png" alt="" /> -->
                              
@@ -1099,7 +1181,7 @@
             <!-- Single Item - We only want to show 3 items on mobile so we check the current index and attach a hidden class if necessary -->
             <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
                 <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button @click="activeImage = 9; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
+                    <button @click="activeImage = 13; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/27df695e-2135-4d92-bd01-591c3c25ae22.png" alt="" /> -->
                              
@@ -1120,7 +1202,7 @@
             <!-- Single Item - We only want to show 3 items on mobile so we check the current index and attach a hidden class if necessary -->
             <li x-cloak x-data="{ shown: false }" x-intersect.full="shown = true" class=" block ">
                 <div x-show="shown" x-transition:enter="transition duration-1000" x-transition:enter-start="transform translate-y-20" x-transition:enter-end="transform translate-y-0">
-                    <button @click="activeImage = 10; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
+                    <button @click="activeImage = 14; galleryModalOpen = true" class="block w-full h-full space-y-4 text-left rounded focus:outline-none focus-visible:ring ring-primary ring-offset-2 ring-opacity-75">
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/236839c5-a5f3-498c-b807-ea2ceb204e6f.png" alt="" /> -->
                              
@@ -1197,7 +1279,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 1">
                                         
-                                            <video preload="metadata" class="rounded shadow-md object-cover w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/7ab2b827-e898-4510-a63d-5781a51e0a3c.mp4#t=0.5" >
+                                            <video preload="metadata" class="rounded shadow-md object-cover w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/b8cd88aa-665a-461e-9b6f-d69f13107ef8.mp4#t=0.5" >
                                             </video>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
@@ -1213,8 +1295,9 @@
                                 
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 3">
-                                            
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/392b228c-d55e-47dd-bf22-913fa7cb61f9.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                        
+                                            <video preload="metadata" class="rounded shadow-md object-cover w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/7ab2b827-e898-4510-a63d-5781a51e0a3c.mp4#t=0.5" >
+                                            </video>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -1222,7 +1305,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 4">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/78b3485d-4928-41f6-9ed2-0e95d5f869d7.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/58e48252-167c-45cc-b520-ab6b747bbb37.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -1230,15 +1313,16 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 5">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/77703d0b-05d5-4a90-80d7-f26e8f400058.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/a8459910-2d98-4f23-b59e-62ff7c2b2b4c.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
                                 
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 6">
-                                            
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/66e22c28-e0f7-4054-b1b6-8990f9e11762.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                        
+                                            <video preload="metadata" class="rounded shadow-md object-cover w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/09f127a1-dd40-4382-97a9-5f0719a28387.mp4#t=0.5" >
+                                            </video>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -1246,7 +1330,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 7">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/50ba0ed4-fa51-47b7-b0cc-19a6f4cd5f1a.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/392b228c-d55e-47dd-bf22-913fa7cb61f9.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -1254,7 +1338,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 8">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/e3118af2-635f-46e7-a7a6-f0ba73945cfc.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/78b3485d-4928-41f6-9ed2-0e95d5f869d7.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -1262,13 +1346,45 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 9">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/27df695e-2135-4d92-bd01-591c3c25ae22.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/77703d0b-05d5-4a90-80d7-f26e8f400058.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
                                 
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 10">
+                                            
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/66e22c28-e0f7-4054-b1b6-8990f9e11762.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <p lorem="1" class="mt-3 text-gray-500"></p>
+                                        
+                                    </li>
+                                
+                                    <!-- Transition Wrapper 1 -->
+                                    <li class="flex flex-col" x-show="activeImage === 11">
+                                            
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/50ba0ed4-fa51-47b7-b0cc-19a6f4cd5f1a.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <p lorem="1" class="mt-3 text-gray-500"></p>
+                                        
+                                    </li>
+                                
+                                    <!-- Transition Wrapper 1 -->
+                                    <li class="flex flex-col" x-show="activeImage === 12">
+                                            
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/e3118af2-635f-46e7-a7a6-f0ba73945cfc.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <p lorem="1" class="mt-3 text-gray-500"></p>
+                                        
+                                    </li>
+                                
+                                    <!-- Transition Wrapper 1 -->
+                                    <li class="flex flex-col" x-show="activeImage === 13">
+                                            
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/27df695e-2135-4d92-bd01-591c3c25ae22.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <p lorem="1" class="mt-3 text-gray-500"></p>
+                                        
+                                    </li>
+                                
+                                    <!-- Transition Wrapper 1 -->
+                                    <li class="flex flex-col" x-show="activeImage === 14">
                                             
                                             <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/236839c5-a5f3-498c-b807-ea2ceb204e6f.png" alt="Our Best Work for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
@@ -1643,11 +1759,11 @@
                 x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
                 x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                 @click="contactModalOpen = false"
-                class="relative flex items-center justify-center w-full h-full"
+                class="relative flex items-center justify-center w-full h-full sm:h-max"
         >
             <div
                     @click.stop
-                    class="flex flex-col w-full h-full overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:px-0 sm:my-0 sm:align-middle sm:max-w-sm  "
+                    class="flex flex-col w-full h-full overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:px-0 sm:my-0 sm:align-middle sm:max-w-3xl"
             >
                 <!-- Header -->
                 <div class="relative px-6 bg-white">
@@ -1668,12 +1784,12 @@
 
                 <!-- Form -->
 
-                <form class="overflow-y-scroll">
+                <form class="overflow-y-scroll pb-12 sm:w-full">
                     <div class="flex-grow h-full overflow-x-hidden overflow-y-auto">
-                        <div class="h-full px-6 pb-1 mt-6 space-y-6">
+                        <div class="h-full px-6 pb-1 mt-6 space-y-6 sm:grid sm:grid-cols-2 sm:min-w-max sm:space-x-3">
                             <!-- Full Name -->
                             
-                            <div>
+                            <div class="sm:ml-3 sm:transform sm:translate-y-6">
                                 <label for="contact-full-name" class="sr-only">Full Name</label>
                                 <input
                                         required
@@ -1752,196 +1868,287 @@
                                 />
                             </div>
                             
-                            <!-- How can we help you? (Concern) -->
-                            
-                            <div>
-                                <label for="contact-concern" class="sr-only">How can we help you?</label>
-                                <textarea
-                                        required
-                                        id="contact-concern"
-                                        name="concern"
-                                        rows="4"
-                                        class="block py-2.5 w-full border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
-                                        placeholder="How can we help you?"
-                                ></textarea>
-                            </div>
-                            
-                            <!-- Services -->
-                            
-                            <fieldset>
-                                <legend class="text-base font-medium text-gray-900">Services</legend>
-                                <div class="mt-2.5 grid gap-y-3.5 grid-cols-2">
+                            <div class='sm:col-span-2'>
+                                
+                                <fieldset class="hidden sm:block sm:mb-3">
+                                    <legend class="text-base font-medium text-gray-900">Services</legend>
+                                    <div class="my-2.5 grid gap-y-3.5 grid-cols-2 sm:flex sm:space-x-6">
 
-                                    
-                                    <div class="flex items-center">
-                                        <input
-                                                id="contact-service-112285"
-                                                name="112285"
-                                                type="checkbox"
-                                                class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
-                                                value="Interior Detailing"
-                                        />
-                                        <label for="contact-label-service-112285" class="ml-3 text-sm font-medium text-gray-700">Interior Detailing</label>
+                                        
+                                        <div class="flex items-center">
+                                            <input
+                                                    id="contact-service-112285"
+                                                    name="112285"
+                                                    type="checkbox"
+                                                    class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
+                                                    value="Interior Detailing"
+                                            />
+                                            <label for="contact-label-service-112285" class="ml-3 text-sm font-medium text-gray-700">Interior Detailing</label>
+                                        </div>
+                                        
+                                        <div class="flex items-center">
+                                            <input
+                                                    id="contact-service-112286"
+                                                    name="112286"
+                                                    type="checkbox"
+                                                    class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
+                                                    value="Maintenance Wash"
+                                            />
+                                            <label for="contact-label-service-112286" class="ml-3 text-sm font-medium text-gray-700">Maintenance Wash</label>
+                                        </div>
+                                        
+                                        <div class="flex items-center">
+                                            <input
+                                                    id="contact-service-112287"
+                                                    name="112287"
+                                                    type="checkbox"
+                                                    class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
+                                                    value="Exterior Detailing"
+                                            />
+                                            <label for="contact-label-service-112287" class="ml-3 text-sm font-medium text-gray-700">Exterior Detailing</label>
+                                        </div>
+                                        
+                                        <div class="flex items-center">
+                                            <input
+                                                    id="contact-service-112288"
+                                                    name="112288"
+                                                    type="checkbox"
+                                                    class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
+                                                    value="Full Detail Service"
+                                            />
+                                            <label for="contact-label-service-112288" class="ml-3 text-sm font-medium text-gray-700">Full Detail Service</label>
+                                        </div>
+                                        
+                                        <div class="flex items-center">
+                                            <input
+                                                    id="contact-service-112289"
+                                                    name="112289"
+                                                    type="checkbox"
+                                                    class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
+                                                    value="Waxing Services"
+                                            />
+                                            <label for="contact-label-service-112289" class="ml-3 text-sm font-medium text-gray-700">Waxing Services</label>
+                                        </div>
+                                        
+                                        <div class="flex items-center">
+                                            <input
+                                                    id="contact-service-112290"
+                                                    name="112290"
+                                                    type="checkbox"
+                                                    class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
+                                                    value="Ceramic Coating"
+                                            />
+                                            <label for="contact-label-service-112290" class="ml-3 text-sm font-medium text-gray-700">Ceramic Coating</label>
+                                        </div>
+                                        
+                                        <div class="flex items-center">
+                                            <input
+                                                    id="contact-service-112291"
+                                                    name="112291"
+                                                    type="checkbox"
+                                                    class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
+                                                    value="RV/Camper Detail"
+                                            />
+                                            <label for="contact-label-service-112291" class="ml-3 text-sm font-medium text-gray-700">RV/Camper Detail</label>
+                                        </div>
+                                        
                                     </div>
-                                    
-                                    <div class="flex items-center">
-                                        <input
-                                                id="contact-service-112286"
-                                                name="112286"
-                                                type="checkbox"
-                                                class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
-                                                value="Maintenance Wash"
-                                        />
-                                        <label for="contact-label-service-112286" class="ml-3 text-sm font-medium text-gray-700">Maintenance Wash</label>
-                                    </div>
-                                    
-                                    <div class="flex items-center">
-                                        <input
-                                                id="contact-service-112287"
-                                                name="112287"
-                                                type="checkbox"
-                                                class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
-                                                value="Exterior Detailing"
-                                        />
-                                        <label for="contact-label-service-112287" class="ml-3 text-sm font-medium text-gray-700">Exterior Detailing</label>
-                                    </div>
-                                    
-                                    <div class="flex items-center">
-                                        <input
-                                                id="contact-service-112288"
-                                                name="112288"
-                                                type="checkbox"
-                                                class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
-                                                value="Full Detail Service"
-                                        />
-                                        <label for="contact-label-service-112288" class="ml-3 text-sm font-medium text-gray-700">Full Detail Service</label>
-                                    </div>
-                                    
-                                    <div class="flex items-center">
-                                        <input
-                                                id="contact-service-112289"
-                                                name="112289"
-                                                type="checkbox"
-                                                class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
-                                                value="Waxing Services"
-                                        />
-                                        <label for="contact-label-service-112289" class="ml-3 text-sm font-medium text-gray-700">Waxing Services</label>
-                                    </div>
-                                    
-                                    <div class="flex items-center">
-                                        <input
-                                                id="contact-service-112290"
-                                                name="112290"
-                                                type="checkbox"
-                                                class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
-                                                value="Ceramic Coating"
-                                        />
-                                        <label for="contact-label-service-112290" class="ml-3 text-sm font-medium text-gray-700">Ceramic Coating</label>
-                                    </div>
-                                    
-                                    <div class="flex items-center">
-                                        <input
-                                                id="contact-service-112291"
-                                                name="112291"
-                                                type="checkbox"
-                                                class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
-                                                value="RV/Camper Detail"
-                                        />
-                                        <label for="contact-label-service-112291" class="ml-3 text-sm font-medium text-gray-700">RV/Camper Detail</label>
-                                    </div>
-                                    
+                                </fieldset>
+                                
+                                <div>
+                                <!-- How can we help you? (Concern) -->
+                                
+                                <div class='sm:flex sm:flex-1 sm:mt-3 sm:space-x-3'>
+                                <div class='sm:flex-grow'>
+                                    <label for="contact-concern" class="sr-only">How can we help you?</label>
+                                    <textarea
+                                            required
+                                            id="contact-concern"
+                                            name="concern"
+                                            rows="4"
+                                            class="block py-3.5 px-2.5 w-full border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
+                                            placeholder="How can we help you?"
+                                    ></textarea>
                                 </div>
-                            </fieldset>
-                            
-                            <!-- Photo Upload -->
-                            
-                            <div
-                                    x-data="{
-                            imageUrl: '',
-                            fileTooLarge: false,
-                            fileChosen(event) {
-                                if (this.isProperlySized(event)) {
-                                    this.fileToDataUrl(event, (src) => (this.imageUrl = src));
-                                    this.fileTooLarge = false;
-                                }
-                                else
-                                    this.fileTooLarge = true;
-                            },
-                            fileToDataUrl(event, callback) {
-                                if (!event.target.files.length) return;
-                                let file = event.target.files[0],
-                                    reader = new FileReader();
-                                reader.readAsDataURL(file);
-                                reader.onload = (e) => callback(e.target.result);
-                            },
-                            isProperlySized(event) {
-                                const files = event.currentTarget.files;
-                                for (const file in files) {
-                                    const filesize = ((files[file].size/1024)/1024).toFixed(4);
-                                    if (filesize > 2)
-                                        return false;
-                                }
-                                return true;
-                            },
-                        }"
+                                
+                                <!-- Services -->
+                                
+                                
+                                <fieldset class="sm:hidden my-3 sm:mb-0">
+                                    <legend class="text-base font-medium text-gray-900">Services</legend>
+                                    <div class="mt-2.5 grid gap-y-3.5 grid-cols-2 sm:flex sm:space-x-6">
 
-                            >
-                                <label class="block text-sm font-medium text-gray-700">Share a photo</label>
-                                <div x-show="imageUrl !== ''" x-collapse>
-                                    <div class="flex flex-col items-center space-y-2 sm:space-y-0 sm:flex-row sm:space-x-5">
-                                        <img :src="imageUrl" class="object-cover rounded-md w-[200px] h-[140px]" :value="imageUrl" id="contact-attachment"/>
-                                        <button
-                                                @click="imageUrl = ''; $refs.fileInput.value = '';"
-                                                type="button"
-                                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                        >
-                                            Change
-                                        </button>
+                                        
+                                        <div class="flex items-center">
+                                            <input
+                                                    id="contact-service-112285"
+                                                    name="112285"
+                                                    type="checkbox"
+                                                    class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
+                                                    value="Interior Detailing"
+                                            />
+                                            <label for="contact-label-service-112285" class="ml-3 text-sm font-medium text-gray-700">Interior Detailing</label>
+                                        </div>
+                                        
+                                        <div class="flex items-center">
+                                            <input
+                                                    id="contact-service-112286"
+                                                    name="112286"
+                                                    type="checkbox"
+                                                    class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
+                                                    value="Maintenance Wash"
+                                            />
+                                            <label for="contact-label-service-112286" class="ml-3 text-sm font-medium text-gray-700">Maintenance Wash</label>
+                                        </div>
+                                        
+                                        <div class="flex items-center">
+                                            <input
+                                                    id="contact-service-112287"
+                                                    name="112287"
+                                                    type="checkbox"
+                                                    class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
+                                                    value="Exterior Detailing"
+                                            />
+                                            <label for="contact-label-service-112287" class="ml-3 text-sm font-medium text-gray-700">Exterior Detailing</label>
+                                        </div>
+                                        
+                                        <div class="flex items-center">
+                                            <input
+                                                    id="contact-service-112288"
+                                                    name="112288"
+                                                    type="checkbox"
+                                                    class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
+                                                    value="Full Detail Service"
+                                            />
+                                            <label for="contact-label-service-112288" class="ml-3 text-sm font-medium text-gray-700">Full Detail Service</label>
+                                        </div>
+                                        
+                                        <div class="flex items-center">
+                                            <input
+                                                    id="contact-service-112289"
+                                                    name="112289"
+                                                    type="checkbox"
+                                                    class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
+                                                    value="Waxing Services"
+                                            />
+                                            <label for="contact-label-service-112289" class="ml-3 text-sm font-medium text-gray-700">Waxing Services</label>
+                                        </div>
+                                        
+                                        <div class="flex items-center">
+                                            <input
+                                                    id="contact-service-112290"
+                                                    name="112290"
+                                                    type="checkbox"
+                                                    class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
+                                                    value="Ceramic Coating"
+                                            />
+                                            <label for="contact-label-service-112290" class="ml-3 text-sm font-medium text-gray-700">Ceramic Coating</label>
+                                        </div>
+                                        
+                                        <div class="flex items-center">
+                                            <input
+                                                    id="contact-service-112291"
+                                                    name="112291"
+                                                    type="checkbox"
+                                                    class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
+                                                    value="RV/Camper Detail"
+                                            />
+                                            <label for="contact-label-service-112291" class="ml-3 text-sm font-medium text-gray-700">RV/Camper Detail</label>
+                                        </div>
+                                        
                                     </div>
-                                </div>
-                                <div x-show="imageUrl === ''" x-collapse>
-                                    <div
-                                            x-on:dragenter.prevent.stop
-                                            x-on:dragleave.prevent.stop
-                                            class="flex justify-center px-6 pt-5 pb-6 mt-1 border-2 border-dashed rounded-md"
-                                    >
-                                        <div class="space-y-1 text-center">
-                                            <svg class="w-12 h-12 mx-auto text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
-                                                <path
-                                                        d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                                                        stroke-width="2"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                />
-                                            </svg>
-                                            <div class="flex justify-center text-sm text-gray-600">
-                                                <label
-                                                        for="file-upload"
-                                                        class="relative font-medium bg-white rounded-md cursor-pointer  text-secondary hover:text-secondary-darker focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary"
-                                                >
-                                                    <span>Upload a file</span>
-                                                    <input
-                                                            x-ref="fileInput"
-                                                            id="file-upload"
-                                                            name="file-upload"
-                                                            type="file"
-                                                            
-                                                            class="sr-only"
-                                                            @change="fileChosen"
-                                                    />
-                                                </label>
-                                            </div>
-                                            <p class="text-xs text-gray-500">PNG, JPG, GIF up to 2MB</p>
+                                </fieldset>
+                                
+                                <!-- Photo Upload -->
+                                
+                                <div
+                                        x-data="{
+                                imageUrl: '',
+                                fileTooLarge: false,
+                                fileChosen(event) {
+                                    if (this.isProperlySized(event)) {
+                                        this.fileToDataUrl(event, (src) => (this.imageUrl = src));
+                                        this.fileTooLarge = false;
+                                    }
+                                    else
+                                        this.fileTooLarge = true;
+                                },
+                                fileToDataUrl(event, callback) {
+                                    if (!event.target.files.length) return;
+                                    let file = event.target.files[0],
+                                        reader = new FileReader();
+                                    reader.readAsDataURL(file);
+                                    reader.onload = (e) => callback(e.target.result);
+                                },
+                                isProperlySized(event) {
+                                    const files = event.currentTarget.files;
+                                    for (const file in files) {
+                                        const filesize = ((files[file].size/1024)/1024).toFixed(4);
+                                        if (filesize > 2)
+                                            return false;
+                                    }
+                                    return true;
+                                },
+                            }"
+
+                                >
+                                    <!-- <label class="block sm:hidden text-sm font-medium text-gray-700">Share a photo</label> -->
+                                    <div x-show="imageUrl !== ''" x-collapse>
+                                        <div class="flex flex-col items-center space-y-2 sm:space-y-0 sm:flex-row sm:space-x-5">
+                                            <img :src="imageUrl" class="object-cover rounded-md w-[200px] h-[140px]" :value="imageUrl" id="contact-attachment"/>
+                                            <button
+                                                    @click="imageUrl = ''; $refs.fileInput.value = '';"
+                                                    type="button"
+                                                    class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                            >
+                                                Change
+                                            </button>
                                         </div>
                                     </div>
+                                    <div x-show="imageUrl === ''" x-collapse>
+                                        <div
+                                                x-on:dragenter.prevent.stop
+                                                x-on:dragleave.prevent.stop
+                                                class="flex justify-center px-6 pt-5 pb-6 mt-1 sm:pt-2 sm:pb-2 sm:mt-0 border-2 border-dashed rounded-md"
+                                        >
+                                            <div class="space-y-1 text-center">
+                                                <svg class="w-12 h-12 mx-auto text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                                    <path
+                                                            d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                    />
+                                                </svg>
+                                                <div class="flex justify-center text-sm text-gray-600">
+                                                    <label
+                                                            for="file-upload"
+                                                            class="relative font-medium bg-white rounded-md cursor-pointer  text-secondary hover:text-secondary-darker focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary"
+                                                    >
+                                                        <span>Upload a file</span>
+                                                        <input
+                                                                x-ref="fileInput"
+                                                                id="file-upload"
+                                                                name="file-upload"
+                                                                type="file"
+                                                                
+                                                                class="sr-only"
+                                                                @change="fileChosen"
+                                                        />
+                                                    </label>
+                                                </div>
+                                                <p class="text-xs text-gray-500">PNG, JPG, GIF up to 2MB</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p x-show="fileTooLarge" class="mt-2 text-sm text-red-600">
+                                        The selected file is too large. Please reduce the size or choose another file.
+                                    </p>
                                 </div>
-                                <p x-show="fileTooLarge" class="mt-2 text-sm text-red-600">
-                                    The selected file is too large. Please reduce the size or choose another file.
-                                </p>
+                                
                             </div>
-                            
+                            </div>
                         </div>
-
                     </div>
 
                 </form>
@@ -1950,12 +2157,15 @@
                                 justify-center
                                 w-full
                                 my-4
+                                mx-12
                             "
                      onclick="send_sms('6fc9ccd2-ef28-4fcc-b4c2-2ae057077ef9')"
                 >
-                    <button class="px-5
+                    <button class="
                                 py-2.5
-                                w-3/4
+                                w-4/5
+                                fixed
+                                bottom
                                 text-sm
                                 font-medium
                                 transition
@@ -1967,7 +2177,14 @@
                                 hover:bg-primary-darker
                                 bg-primar
                                 focus-visible:ring-2
-                                ring-primary ring-opacity-75 ring-offset-2"> Send
+                                ring-primary ring-opacity-75 ring-offset-2" 
+                                style="
+                                position:absolute;
+                                left: 50%;
+                                bottom: 0;
+                                transform: translate(-50%, -50%);
+                                margin-top: 0;
+                                margin-bottom: 0"> Send
                     </button>
                 </div>
 
@@ -1976,7 +2193,6 @@
         </div>
     </div>
 </template>
-
 <!-- Modal -->
 <template x-teleport="body">
     <div x-show="reviewModalOpen" @keydown.escape.prevent.stop="reviewModalOpen = false" role="dialog" aria-modal="true" x-id="['modal-title']" :aria-labelledby="$id('modal-title')" class="fixed inset-0 z-40 pt-8 pb-20" x-trap.noscroll.inert="reviewModalOpen">
