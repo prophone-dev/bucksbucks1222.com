@@ -10,7 +10,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>auto detailing near me in Reeds Spring, MO | Bucks Testing 324 1050 |  Home</title>
+    <title>Your Industry in  Reeds Spring,  MO 65737 | Bucks Testing 324 1050 |  Home</title>
     <meta name="description"
           content="Bucks Testing 324 1050 is a professional detailing company that serves the Reeds Spring and surrounding areas.">
     <!-- <title>ProPhone Templates</title> -->
@@ -48,15 +48,15 @@
                 --contrastThreshold: 60%;
 
                 /* Primary color as HSL */
-                --color-primary-h: 220.9090909090909;
-                --color-primary-s: 39.285714285714285%;
-                --color-primary-l: 10.9375%;
+                --color-primary-h: 1.5789473684210527;
+                --color-primary-s: 97.9381443298969%;
+                --color-primary-l: 37.890625%;
                 --color-primary-darker: hsl(var(--color-primary-h), var(--color-primary-s), calc(var(--color-primary-l) - 7.5%));
 
                 /* Secondary color as HSL */
-                --color-secondary-h: 1.5789473684210527;
-                --color-secondary-s: 97.9381443298969%;
-                --color-secondary-l: 37.890625%;
+                --color-secondary-h: 180;
+                --color-secondary-s: 0%;
+                --color-secondary-l: 0%;
                 --color-secondary-darker: hsl(var(--color-secondary-h), var(--color-secondary-s), calc(var(--color-secondary-l) - 7.5%));
 
                 --switch: calc((var(--color-primary-l) - var(--contrastThreshold)) * -100);
@@ -69,6 +69,7 @@
     <script type="text/javascript" defer>
                     function send_sms(slug){
                         console.log('send_sms',1, slug)
+                        event.preventDefault()
                         function uuidV4() {
                             return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
                               (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
@@ -187,7 +188,6 @@
                         }
                         const getSelectedServices = () =>{
                             const allSelectedServiced = Array.from(document.querySelectorAll('[id^="contact-service"]'))
-
                             if (allSelectedServiced.length){
                                 return allSelectedServiced.filter( (x)=> x.checked
                             ).map(item => item.value).join(",");
@@ -248,11 +248,21 @@
                             return result.json();
                         })
                         .then(result => {
+                            const sendTextModalId = document.getElementById("send-text-modal")
+                            sendTextModalId.style.display = 'none'
+                            const modalId = document.getElementById("text-thank-you")
+                            modalId.style.display = 'block';
+                            return result
+                        })
+                        .catch(result => {
                             console.log(result)
-                            alert("Your message has been sent!")
-                            location.reload()
+                            alert("Please make sure to fill out each field")
                         })
 
+                        setTimeout(() => {
+                            const modalId = document.getElementById("text-thank-you")
+                            modalId.style.display = 'none';
+                        }, 3000);
 
                     }
                 
@@ -352,8 +362,8 @@
                         class="flex items-center h-full transition-all duration-200 origin-left"
                     >
                         <!-- Logo Link -->
-                        <a
-                            href="/"
+                    
+                        <a  href= " index "
                             class="flex items-center justify-center flex-shrink-0 pr-5 bg-white rounded-md  focus:ring-2 focus:outline-none ring-primary ring-opacity-75 ring-offset-2"
                         >
                             <img
@@ -362,6 +372,7 @@
                                 alt="Brand Logo"
                             />
                         </a>
+                    
                     </div>
                     <!-- Links -->
                     <div
@@ -404,134 +415,14 @@
                                 <!-- We decide between direct link and dropdown here -->
                                 <!-- <if condition="item.links"> -->
                                 
-                                    <button
-                                        type="button"
-                                        aria-haspopup="true"
-                                        :aria-expanded="desktopOpen"
-                                        aria-controls="navitem_2"
-                                        @click="desktopOpen = !desktopOpen"
-                                        class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 transition border-b-2 border-transparent  focus-visible:ring-2 focus:outline-none ring-primary group hover:text-gray-900 ring-opacity-75 ring-offset-2"
+                                    <a
+                                        href="  "
+                                        class=" border-transparent hover:border-gray-300 hover:text-gray-700 text-gray-500  group pb-5 pt-6 inline-flex items-center px-1 transition text-sm font-medium  text-gray-500  focus:ring-2 focus:outline-none ring-primary ring-opacity-75 ring-offset-2"
                                     >
-                                        <span>Services</span>
-                                        <svg
-                                            class="w-5 h-5 ml-2 text-gray-400 transition-transform duration-300 group-hover:text-gray-500"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                            aria-hidden="true"
-                                            :class="{ '-rotate-180': desktopOpen }"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                clip-rule="evenodd"
-                                            />
-                                        </svg>
-                                    </button>
-                                <!-- </if> -->
-                                <!-- <else> -->
+                                        Services 
+                                    </a>
+                                <!-- </else> -->
                                 
-                                
-                                    <div
-                                        x-cloak
-                                        x-show="desktopOpen"
-                                        x-transition:enter="transition ease-out duration-200"
-                                        x-transition:enter-start="opacity-0 translate-y-1"
-                                        x-transition:enter-end="opacity-100 translate-y-0"
-                                        x-transition:leave="transition ease-in duration-150"
-                                        x-transition:leave-start="opacity-100 translate-y-0"
-                                        x-transition:leave-end="opacity-0 translate-y-1"
-                                        id="navitem_2"
-                                        role="menu"
-                                        class="absolute z-20 w-screen max-w-xs px-2 mt-3 transform -translate-x-1/2 top-12 left-1/2 sm:px-0"
-                                        aria-orientation="vertical"
-                                    >
-                                        <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                                            <div class="relative grid gap-6 px-5 py-6 bg-white sm:gap-8 sm:p-8">
-                                                <!-- Render each sublink -->
-                                                <!-- <each loop="link in [{&#x27;title&#x27;: &#x27;&#x27;, &#x27;copy&#x27;: &#x27;Interior Detailing&#x27;, &#x27;href&#x27;: &#x27;service-Interior-Detailing&#x27;}, {&#x27;title&#x27;: &#x27;&#x27;, &#x27;copy&#x27;: &#x27;Maintenance Wash&#x27;, &#x27;href&#x27;: &#x27;service-Maintenance-Wash&#x27;}, {&#x27;title&#x27;: &#x27;&#x27;, &#x27;copy&#x27;: &#x27;Exterior Detailing&#x27;, &#x27;href&#x27;: &#x27;service-Exterior-Detailing&#x27;}, {&#x27;title&#x27;: &#x27;&#x27;, &#x27;copy&#x27;: &#x27;Full Detail Service&#x27;, &#x27;href&#x27;: &#x27;service-Full-Detail-Service&#x27;}, {&#x27;title&#x27;: &#x27;&#x27;, &#x27;copy&#x27;: &#x27;Waxing Services&#x27;, &#x27;href&#x27;: &#x27;service-Waxing-Services&#x27;}, {&#x27;title&#x27;: &#x27;&#x27;, &#x27;copy&#x27;: &#x27;Ceramic Coating&#x27;, &#x27;href&#x27;: &#x27;service-Ceramic-Coating&#x27;}, {&#x27;title&#x27;: &#x27;&#x27;, &#x27;copy&#x27;: &#x27;RV/Camper Detail&#x27;, &#x27;href&#x27;: &#x27;service-RV-Camper-Detail&#x27;}]"> -->
-                                                  
-                                                    <a
-                                                        href=" service-Interior-Detailing "
-                                                        role="menuitem"
-                                                        class="block p-3 -m-3 transition rounded-md  focus:outline-none focus:ring-2 ring-primary ring-opacity-75 ring-offset-2 hover:bg-gray-50"
-                                                    >
-                                                        <!-- <p class="text-base font-medium text-gray-900"></p> -->
-                                                        <p class="mt-1 text-sm text-gray-500">Interior Detailing</p>
-                                                    </a>
-                                                <!-- </each> -->
-                                               <!--  -->
-                                                 
-                                                    <a
-                                                        href=" service-Maintenance-Wash "
-                                                        role="menuitem"
-                                                        class="block p-3 -m-3 transition rounded-md  focus:outline-none focus:ring-2 ring-primary ring-opacity-75 ring-offset-2 hover:bg-gray-50"
-                                                    >
-                                                        <!-- <p class="text-base font-medium text-gray-900"></p> -->
-                                                        <p class="mt-1 text-sm text-gray-500">Maintenance Wash</p>
-                                                    </a>
-                                                <!-- </each> -->
-                                               <!--  -->
-                                                 
-                                                    <a
-                                                        href=" service-Exterior-Detailing "
-                                                        role="menuitem"
-                                                        class="block p-3 -m-3 transition rounded-md  focus:outline-none focus:ring-2 ring-primary ring-opacity-75 ring-offset-2 hover:bg-gray-50"
-                                                    >
-                                                        <!-- <p class="text-base font-medium text-gray-900"></p> -->
-                                                        <p class="mt-1 text-sm text-gray-500">Exterior Detailing</p>
-                                                    </a>
-                                                <!-- </each> -->
-                                               <!--  -->
-                                                 
-                                                    <a
-                                                        href=" service-Full-Detail-Service "
-                                                        role="menuitem"
-                                                        class="block p-3 -m-3 transition rounded-md  focus:outline-none focus:ring-2 ring-primary ring-opacity-75 ring-offset-2 hover:bg-gray-50"
-                                                    >
-                                                        <!-- <p class="text-base font-medium text-gray-900"></p> -->
-                                                        <p class="mt-1 text-sm text-gray-500">Full Detail Service</p>
-                                                    </a>
-                                                <!-- </each> -->
-                                               <!--  -->
-                                                 
-                                                    <a
-                                                        href=" service-Waxing-Services "
-                                                        role="menuitem"
-                                                        class="block p-3 -m-3 transition rounded-md  focus:outline-none focus:ring-2 ring-primary ring-opacity-75 ring-offset-2 hover:bg-gray-50"
-                                                    >
-                                                        <!-- <p class="text-base font-medium text-gray-900"></p> -->
-                                                        <p class="mt-1 text-sm text-gray-500">Waxing Services</p>
-                                                    </a>
-                                                <!-- </each> -->
-                                               <!--  -->
-                                                 
-                                                    <a
-                                                        href=" service-Ceramic-Coating "
-                                                        role="menuitem"
-                                                        class="block p-3 -m-3 transition rounded-md  focus:outline-none focus:ring-2 ring-primary ring-opacity-75 ring-offset-2 hover:bg-gray-50"
-                                                    >
-                                                        <!-- <p class="text-base font-medium text-gray-900"></p> -->
-                                                        <p class="mt-1 text-sm text-gray-500">Ceramic Coating</p>
-                                                    </a>
-                                                <!-- </each> -->
-                                               <!--  -->
-                                                 
-                                                    <a
-                                                        href=" service-RV-Camper-Detail "
-                                                        role="menuitem"
-                                                        class="block p-3 -m-3 transition rounded-md  focus:outline-none focus:ring-2 ring-primary ring-opacity-75 ring-offset-2 hover:bg-gray-50"
-                                                    >
-                                                        <!-- <p class="text-base font-medium text-gray-900"></p> -->
-                                                        <p class="mt-1 text-sm text-gray-500">RV/Camper Detail</p>
-                                                    </a>
-                                                <!-- </each> -->
-                                               <!--  -->
-                                               
-                                            </div>
-                                        </div>
-                                    </div>
-                                <!-- </if> -->
                                 
                                 
                             </div>
@@ -690,91 +581,12 @@
                             <div x-trap.inert="openMenu == 'navitem_2'">
                                 <!-- We decide between direct link and dropdown here -->
                                 
-                                    <!-- <if condition="item.links"> -->
-                                    <button
-                                        aria-haspopup="true"
-                                        :aria-expanded="openMenu == 'navitem_2'"
-                                        aria-controls="mobile-navitem_2"
-                                        @click="openMenu = openMenu == 'navitem_2' ? '' : 'navitem_2'"
-                                        class="relative inline-flex items-center w-full px-3 py-2 overflow-hidden text-base font-medium text-gray-700 transition rounded-md  border-secondary"
-                                        :class="openMenu == 'navitem_2' ? 'z-30' : 'z-0'"
+                                    <a
+                                        href="  "
+                                        class=" 'text-gray-700'  block px-3 py-2 text-base font-medium rounded-md border-secondary transition"
+                                        >Services</a
                                     >
-                                        <span>Services</span>
-                                        <svg
-                                            class="w-5 h-5 ml-2 text-gray-400 transition-transform duration-300"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                            aria-hidden="true"
-                                            :class="{ '-rotate-180': openMenu == 'navitem_2' }"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                clip-rule="evenodd"
-                                            />
-                                        </svg>
-                                    </button>
                                 
-                                
-                                    <!-- <if condition="item.links"> -->
-                                    <!-- Expandable Menu -->
-                                    <div
-                                        x-cloak
-                                        x-show="openMenu == 'navitem_2'"
-                                        x-collapse
-                                        id="mobile-navitem_2"
-                                        role="menu"
-                                        class="z-20 pt-1 pb-2"
-                                        aria-orientation="vertical"
-                                    >
-                                        <div class="relative grid gap-6 px-5 py-2 bg-white rounded-lg">
-                                            <!-- Render each sublink -->
-                                            
-                                                <a href="service-Interior-Detailing" role="menuitem" class="block p-3 -m-3 transition rounded-md">
-                                                    <!-- <p class="text-base font-medium text-gray-900"></p> -->
-                                                    <p class="mt-1 text-sm text-gray-500">Interior Detailing</p>
-                                                </a>
-                                            <!-- </each> -->
-                                            
-                                                <a href="service-Maintenance-Wash" role="menuitem" class="block p-3 -m-3 transition rounded-md">
-                                                    <!-- <p class="text-base font-medium text-gray-900"></p> -->
-                                                    <p class="mt-1 text-sm text-gray-500">Maintenance Wash</p>
-                                                </a>
-                                            <!-- </each> -->
-                                            
-                                                <a href="service-Exterior-Detailing" role="menuitem" class="block p-3 -m-3 transition rounded-md">
-                                                    <!-- <p class="text-base font-medium text-gray-900"></p> -->
-                                                    <p class="mt-1 text-sm text-gray-500">Exterior Detailing</p>
-                                                </a>
-                                            <!-- </each> -->
-                                            
-                                                <a href="service-Full-Detail-Service" role="menuitem" class="block p-3 -m-3 transition rounded-md">
-                                                    <!-- <p class="text-base font-medium text-gray-900"></p> -->
-                                                    <p class="mt-1 text-sm text-gray-500">Full Detail Service</p>
-                                                </a>
-                                            <!-- </each> -->
-                                            
-                                                <a href="service-Waxing-Services" role="menuitem" class="block p-3 -m-3 transition rounded-md">
-                                                    <!-- <p class="text-base font-medium text-gray-900"></p> -->
-                                                    <p class="mt-1 text-sm text-gray-500">Waxing Services</p>
-                                                </a>
-                                            <!-- </each> -->
-                                            
-                                                <a href="service-Ceramic-Coating" role="menuitem" class="block p-3 -m-3 transition rounded-md">
-                                                    <!-- <p class="text-base font-medium text-gray-900"></p> -->
-                                                    <p class="mt-1 text-sm text-gray-500">Ceramic Coating</p>
-                                                </a>
-                                            <!-- </each> -->
-                                            
-                                                <a href="service-RV-Camper-Detail" role="menuitem" class="block p-3 -m-3 transition rounded-md">
-                                                    <!-- <p class="text-base font-medium text-gray-900"></p> -->
-                                                    <p class="mt-1 text-sm text-gray-500">RV/Camper Detail</p>
-                                                </a>
-                                            <!-- </each> -->
-                                            
-                                        </div>
-                                    </div>
                                 
                             </div>
                         <!-- </each> -->
@@ -1025,7 +837,7 @@
                                   
                                       <img 
                                         src="https://landing-page-app-hero-images.s3.amazonaws.com/media/KH43IN59OAK8NAK06541SJU92URLZ5JQV43JS618.jpeg"
-                                        alt="Bucks Testing 324 1050 team in Reeds Spring, MO - people or person"
+                                        alt="Bucks Testing 324 1050 team in  Reeds Spring,  MO 65737 - people or person"
                                         class="w-auto h-auto max-h-full max-w-full"
                                         loading="lazy"
                                       >
@@ -1220,7 +1032,7 @@
                             
                             <img
                                 class="object-cover grayscale"
-                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/undefined/515df876-996b-4ef2-b8f7-bb7809e13bc6.png" alt=" for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"
+                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/undefined/515df876-996b-4ef2-b8f7-bb7809e13bc6.png" alt=" for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"
                                 alt=""
                             />
                             
@@ -1278,7 +1090,7 @@
                             
                             <img
                                 class="object-cover grayscale"
-                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/undefined/a9e15e39-feb0-480a-8855-c9e8a9893a4c.png" alt=" for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"
+                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/undefined/a9e15e39-feb0-480a-8855-c9e8a9893a4c.png" alt=" for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"
                                 alt=""
                             />
                             
@@ -1336,7 +1148,7 @@
                             
                             <img
                                 class="object-cover grayscale"
-                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/undefined/2402f115-d77c-4edd-a5ef-787a97e90f41.png" alt=" for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"
+                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/undefined/2402f115-d77c-4edd-a5ef-787a97e90f41.png" alt=" for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"
                                 alt=""
                             />
                             
@@ -1394,7 +1206,7 @@
                             
                             <img
                                 class="object-cover grayscale"
-                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/undefined/e426eb5c-b51f-4b2e-871c-8e34a5eab219.png" alt=" for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"
+                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/undefined/e426eb5c-b51f-4b2e-871c-8e34a5eab219.png" alt=" for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"
                                 alt=""
                             />
                             
@@ -1452,7 +1264,7 @@
                             
                             <img
                                 class="object-cover grayscale"
-                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/undefined/9fc09a19-8776-4221-ae55-4ca1c574818b.png" alt=" for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"
+                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/undefined/9fc09a19-8776-4221-ae55-4ca1c574818b.png" alt=" for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"
                                 alt=""
                             />
                             
@@ -1510,7 +1322,7 @@
                             
                             <img
                                 class="object-cover grayscale"
-                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/undefined/b7aa64e3-481b-4200-9b88-1e80d4d8966b.png" alt=" for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"
+                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/undefined/b7aa64e3-481b-4200-9b88-1e80d4d8966b.png" alt=" for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"
                                 alt=""
                             />
                             
@@ -1568,7 +1380,7 @@
                             
                             <img
                                 class="object-cover grayscale"
-                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/undefined/8b3e03fb-ef02-4ec5-ba18-a2034863064f.png" alt=" for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"
+                    src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/undefined/8b3e03fb-ef02-4ec5-ba18-a2034863064f.png" alt=" for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"
                                 alt=""
                             />
                             
@@ -1817,7 +1629,7 @@
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/60b59343-23d2-417e-b374-440ac2184b49.png" alt="" /> -->
                              
-                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/60b59343-23d2-417e-b374-440ac2184b49.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/> 
+                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/60b59343-23d2-417e-b374-440ac2184b49.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/> 
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/60b59343-23d2-417e-b374-440ac2184b49.png" alt="" /> -->
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/x/media/60b59343-23d2-417e-b374-440ac2184b49.png" alt="" /> -->
                             
@@ -1838,7 +1650,7 @@
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/764386d9-f9aa-413d-ab14-867f2e22f419.mp4" alt="" /> -->
                             
-                                <video preload="metadata" class="rounded shadow-md object-cover w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/764386d9-f9aa-413d-ab14-867f2e22f419.mp4#t=0.5" >
+                                <video preload="metadata" class="rounded shadow-md object-contain w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/764386d9-f9aa-413d-ab14-867f2e22f419.mp4#t=0.5" >
                                 </video>
                             
                         </div>
@@ -1858,7 +1670,7 @@
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/e8d50fba-2ffe-46f2-b570-09bda98e8240.png" alt="" /> -->
                              
-                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/e8d50fba-2ffe-46f2-b570-09bda98e8240.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/> 
+                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/e8d50fba-2ffe-46f2-b570-09bda98e8240.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/> 
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/e8d50fba-2ffe-46f2-b570-09bda98e8240.png" alt="" /> -->
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/x/media/e8d50fba-2ffe-46f2-b570-09bda98e8240.png" alt="" /> -->
                             
@@ -1879,7 +1691,7 @@
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/7ab2b827-e898-4510-a63d-5781a51e0a3c.mp4" alt="" /> -->
                             
-                                <video preload="metadata" class="rounded shadow-md object-cover w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/7ab2b827-e898-4510-a63d-5781a51e0a3c.mp4#t=0.5" >
+                                <video preload="metadata" class="rounded shadow-md object-contain w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/7ab2b827-e898-4510-a63d-5781a51e0a3c.mp4#t=0.5" >
                                 </video>
                             
                         </div>
@@ -1899,7 +1711,7 @@
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/58e48252-167c-45cc-b520-ab6b747bbb37.png" alt="" /> -->
                              
-                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/58e48252-167c-45cc-b520-ab6b747bbb37.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/> 
+                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/58e48252-167c-45cc-b520-ab6b747bbb37.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/> 
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/58e48252-167c-45cc-b520-ab6b747bbb37.png" alt="" /> -->
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/x/media/58e48252-167c-45cc-b520-ab6b747bbb37.png" alt="" /> -->
                             
@@ -1920,7 +1732,7 @@
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/a8459910-2d98-4f23-b59e-62ff7c2b2b4c.png" alt="" /> -->
                              
-                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/a8459910-2d98-4f23-b59e-62ff7c2b2b4c.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/> 
+                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/a8459910-2d98-4f23-b59e-62ff7c2b2b4c.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/> 
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/a8459910-2d98-4f23-b59e-62ff7c2b2b4c.png" alt="" /> -->
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/x/media/a8459910-2d98-4f23-b59e-62ff7c2b2b4c.png" alt="" /> -->
                             
@@ -1941,7 +1753,7 @@
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/09f127a1-dd40-4382-97a9-5f0719a28387.mp4" alt="" /> -->
                             
-                                <video preload="metadata" class="rounded shadow-md object-cover w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/09f127a1-dd40-4382-97a9-5f0719a28387.mp4#t=0.5" >
+                                <video preload="metadata" class="rounded shadow-md object-contain w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/09f127a1-dd40-4382-97a9-5f0719a28387.mp4#t=0.5" >
                                 </video>
                             
                         </div>
@@ -1961,7 +1773,7 @@
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/b8cd88aa-665a-461e-9b6f-d69f13107ef8.mp4" alt="" /> -->
                             
-                                <video preload="metadata" class="rounded shadow-md object-cover w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/b8cd88aa-665a-461e-9b6f-d69f13107ef8.mp4#t=0.5" >
+                                <video preload="metadata" class="rounded shadow-md object-contain w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/b8cd88aa-665a-461e-9b6f-d69f13107ef8.mp4#t=0.5" >
                                 </video>
                             
                         </div>
@@ -1981,7 +1793,7 @@
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/392b228c-d55e-47dd-bf22-913fa7cb61f9.png" alt="" /> -->
                              
-                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/392b228c-d55e-47dd-bf22-913fa7cb61f9.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/> 
+                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/392b228c-d55e-47dd-bf22-913fa7cb61f9.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/> 
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/392b228c-d55e-47dd-bf22-913fa7cb61f9.png" alt="" /> -->
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/x/media/392b228c-d55e-47dd-bf22-913fa7cb61f9.png" alt="" /> -->
                             
@@ -2002,7 +1814,7 @@
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/78b3485d-4928-41f6-9ed2-0e95d5f869d7.png" alt="" /> -->
                              
-                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/78b3485d-4928-41f6-9ed2-0e95d5f869d7.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/> 
+                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/78b3485d-4928-41f6-9ed2-0e95d5f869d7.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/> 
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/78b3485d-4928-41f6-9ed2-0e95d5f869d7.png" alt="" /> -->
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/x/media/78b3485d-4928-41f6-9ed2-0e95d5f869d7.png" alt="" /> -->
                             
@@ -2023,7 +1835,7 @@
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/77703d0b-05d5-4a90-80d7-f26e8f400058.png" alt="" /> -->
                              
-                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/77703d0b-05d5-4a90-80d7-f26e8f400058.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/> 
+                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/77703d0b-05d5-4a90-80d7-f26e8f400058.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/> 
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/77703d0b-05d5-4a90-80d7-f26e8f400058.png" alt="" /> -->
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/x/media/77703d0b-05d5-4a90-80d7-f26e8f400058.png" alt="" /> -->
                             
@@ -2044,7 +1856,7 @@
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/66e22c28-e0f7-4054-b1b6-8990f9e11762.png" alt="" /> -->
                              
-                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/66e22c28-e0f7-4054-b1b6-8990f9e11762.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/> 
+                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/66e22c28-e0f7-4054-b1b6-8990f9e11762.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/> 
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/66e22c28-e0f7-4054-b1b6-8990f9e11762.png" alt="" /> -->
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/x/media/66e22c28-e0f7-4054-b1b6-8990f9e11762.png" alt="" /> -->
                             
@@ -2065,7 +1877,7 @@
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/50ba0ed4-fa51-47b7-b0cc-19a6f4cd5f1a.png" alt="" /> -->
                              
-                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/50ba0ed4-fa51-47b7-b0cc-19a6f4cd5f1a.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/> 
+                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/50ba0ed4-fa51-47b7-b0cc-19a6f4cd5f1a.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/> 
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/50ba0ed4-fa51-47b7-b0cc-19a6f4cd5f1a.png" alt="" /> -->
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/x/media/50ba0ed4-fa51-47b7-b0cc-19a6f4cd5f1a.png" alt="" /> -->
                             
@@ -2086,7 +1898,7 @@
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/e3118af2-635f-46e7-a7a6-f0ba73945cfc.png" alt="" /> -->
                              
-                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/e3118af2-635f-46e7-a7a6-f0ba73945cfc.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/> 
+                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/e3118af2-635f-46e7-a7a6-f0ba73945cfc.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/> 
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/e3118af2-635f-46e7-a7a6-f0ba73945cfc.png" alt="" /> -->
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/x/media/e3118af2-635f-46e7-a7a6-f0ba73945cfc.png" alt="" /> -->
                             
@@ -2107,7 +1919,7 @@
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/27df695e-2135-4d92-bd01-591c3c25ae22.png" alt="" /> -->
                              
-                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/27df695e-2135-4d92-bd01-591c3c25ae22.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/> 
+                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/27df695e-2135-4d92-bd01-591c3c25ae22.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/> 
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/27df695e-2135-4d92-bd01-591c3c25ae22.png" alt="" /> -->
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/x/media/27df695e-2135-4d92-bd01-591c3c25ae22.png" alt="" /> -->
                             
@@ -2128,7 +1940,7 @@
                         <div class="aspect-w-3 aspect-h-2">
                             <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/236839c5-a5f3-498c-b807-ea2ceb204e6f.png" alt="" /> -->
                              
-                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/236839c5-a5f3-498c-b807-ea2ceb204e6f.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/> 
+                                <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/media/236839c5-a5f3-498c-b807-ea2ceb204e6f.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/> 
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/236839c5-a5f3-498c-b807-ea2ceb204e6f.png" alt="" /> -->
                                 <!-- <img class="object-cover rounded-lg shadow-lg" src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/x/media/236839c5-a5f3-498c-b807-ea2ceb204e6f.png" alt="" /> -->
                             
@@ -2193,7 +2005,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 0">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/60b59343-23d2-417e-b374-440ac2184b49.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/60b59343-23d2-417e-b374-440ac2184b49.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -2201,7 +2013,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 1">
                                         
-                                            <video preload="metadata" class="rounded shadow-md object-cover w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/764386d9-f9aa-413d-ab14-867f2e22f419.mp4#t=0.5" >
+                                            <video preload="metadata" class="rounded shadow-md object-contain w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/764386d9-f9aa-413d-ab14-867f2e22f419.mp4#t=0.5" >
                                             </video>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
@@ -2210,7 +2022,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 2">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/e8d50fba-2ffe-46f2-b570-09bda98e8240.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/e8d50fba-2ffe-46f2-b570-09bda98e8240.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -2218,7 +2030,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 3">
                                         
-                                            <video preload="metadata" class="rounded shadow-md object-cover w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/7ab2b827-e898-4510-a63d-5781a51e0a3c.mp4#t=0.5" >
+                                            <video preload="metadata" class="rounded shadow-md object-contain w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/7ab2b827-e898-4510-a63d-5781a51e0a3c.mp4#t=0.5" >
                                             </video>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
@@ -2227,7 +2039,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 4">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/58e48252-167c-45cc-b520-ab6b747bbb37.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/58e48252-167c-45cc-b520-ab6b747bbb37.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -2235,7 +2047,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 5">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/a8459910-2d98-4f23-b59e-62ff7c2b2b4c.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/a8459910-2d98-4f23-b59e-62ff7c2b2b4c.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -2243,7 +2055,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 6">
                                         
-                                            <video preload="metadata" class="rounded shadow-md object-cover w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/09f127a1-dd40-4382-97a9-5f0719a28387.mp4#t=0.5" >
+                                            <video preload="metadata" class="rounded shadow-md object-contain w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/09f127a1-dd40-4382-97a9-5f0719a28387.mp4#t=0.5" >
                                             </video>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
@@ -2252,7 +2064,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 7">
                                         
-                                            <video preload="metadata" class="rounded shadow-md object-cover w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/b8cd88aa-665a-461e-9b6f-d69f13107ef8.mp4#t=0.5" >
+                                            <video preload="metadata" class="rounded shadow-md object-contain w-full h-60" loading="lazy" controls> <source src="https://landing-page-app-hero-images.s3.amazonaws.com/media/b8cd88aa-665a-461e-9b6f-d69f13107ef8.mp4#t=0.5" >
                                             </video>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
@@ -2261,7 +2073,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 8">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/392b228c-d55e-47dd-bf22-913fa7cb61f9.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/392b228c-d55e-47dd-bf22-913fa7cb61f9.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -2269,7 +2081,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 9">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/78b3485d-4928-41f6-9ed2-0e95d5f869d7.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/78b3485d-4928-41f6-9ed2-0e95d5f869d7.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -2277,7 +2089,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 10">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/77703d0b-05d5-4a90-80d7-f26e8f400058.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/77703d0b-05d5-4a90-80d7-f26e8f400058.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -2285,7 +2097,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 11">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/66e22c28-e0f7-4054-b1b6-8990f9e11762.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/66e22c28-e0f7-4054-b1b6-8990f9e11762.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -2293,7 +2105,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 12">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/50ba0ed4-fa51-47b7-b0cc-19a6f4cd5f1a.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/50ba0ed4-fa51-47b7-b0cc-19a6f4cd5f1a.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -2301,7 +2113,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 13">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/e3118af2-635f-46e7-a7a6-f0ba73945cfc.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/e3118af2-635f-46e7-a7a6-f0ba73945cfc.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -2309,7 +2121,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 14">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/27df695e-2135-4d92-bd01-591c3c25ae22.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/27df695e-2135-4d92-bd01-591c3c25ae22.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -2317,7 +2129,7 @@
                                     <!-- Transition Wrapper 1 -->
                                     <li class="flex flex-col" x-show="activeImage === 15">
                                             
-                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/236839c5-a5f3-498c-b807-ea2ceb204e6f.png" alt="Interior Detailing for Bucks Testing 324 1050 in Reeds Spring, MO" loading="lazy"/>
+                                            <img class="mt-2 lg:h-[481px] h-[200px] sm:h-[300px] self-center rounded-md object-cover"  src="https://d3p2r6ofnvoe67.cloudfront.net/fit-in/684x480/media/236839c5-a5f3-498c-b807-ea2ceb204e6f.png" alt="Interior Detailing for Bucks Testing 324 1050 in  Reeds Spring,  MO 65737" loading="lazy"/>
                                             <p lorem="1" class="mt-3 text-gray-500"></p>
                                         
                                     </li>
@@ -2373,525 +2185,6 @@
 
             <!-- Loop each of the three chunks (columns) here -->
             
-            
-                <!-- Single Testimonial Column -->
-                <ul class="space-y-8">
-                    <!-- Loop each of the items (rows) here -->
-                    
-                    
-                    
-
-                        <!-- Review Item -->
-                        <li class=" block  px-6 py-8 rounded-lg shadow md:px-8 xl:pl-16 xl:pr-6 bg-gray-50">
-                            <!-- Star Rating -->
-                            <div class="flex">
-                                <div aria-hidden="true" class="space-x-1.5 flex">
-                                    <!-- TODO: Simply use a for loop here `for i = 1; i < amountOfStars; i++` -->
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                </div>
-                                <!-- TODO: Add the current amount of stars here -->
-                                <span class="sr-only"> out of 5 stars</span>
-                            </div>
-
-                            <blockquote class="mt-6">
-                                <div class="relative">
-                                    <svg
-                                        aria-hidden="true"
-                                        class="absolute top-0 left-0 w-8 h-8 text-gray-200 -translate-x-3 -translate-y-2"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4Zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4Z"
-                                            fill="currentColor"
-                                        />
-                                    </svg>
-                                    <p lorem="1" class="relative text-lg font-medium">
-                                        They did a wonderful job detailing our family car. I love that they come right to you. They worked quickly, but we’re very detailed. Our van looks terrific and is ready for another year!
-                                    </p>
-                                </div>
-                                <footer class="flex items-center justify-between mt-8 space-x-4">
-                                    <div>
-                                        <span class="block font-medium text-primary">Nicole N. Swartout</span>
-                                        <span class="block font-medium">Reeds Spring, MO</span>
-                                    </div>
-
-                                    <!-- Social Icon -->
-                                    <div class="flex-shrink-0">
-                                        <span class="sr-only">None</span>
-                                        
-                                    
-                                    </div>
-                                </footer>
-                            </blockquote>
-                        </li>
-                    
-                    
-                    
-
-                        <!-- Review Item -->
-                        <li class=" hidden sm:block  px-6 py-8 rounded-lg shadow md:px-8 xl:pl-16 xl:pr-6 bg-gray-50">
-                            <!-- Star Rating -->
-                            <div class="flex">
-                                <div aria-hidden="true" class="space-x-1.5 flex">
-                                    <!-- TODO: Simply use a for loop here `for i = 1; i < amountOfStars; i++` -->
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                </div>
-                                <!-- TODO: Add the current amount of stars here -->
-                                <span class="sr-only"> out of 5 stars</span>
-                            </div>
-
-                            <blockquote class="mt-6">
-                                <div class="relative">
-                                    <svg
-                                        aria-hidden="true"
-                                        class="absolute top-0 left-0 w-8 h-8 text-gray-200 -translate-x-3 -translate-y-2"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4Zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4Z"
-                                            fill="currentColor"
-                                        />
-                                    </svg>
-                                    <p lorem="1" class="relative text-lg font-medium">
-                                        Detail on Demand exceeded my expectations for a mobile detailing service. Extremely professional, detail oriented and reliable. Will definitely be using them again as well as referring everyone I know!
-                                    </p>
-                                </div>
-                                <footer class="flex items-center justify-between mt-8 space-x-4">
-                                    <div>
-                                        <span class="block font-medium text-primary">Ashleigh Dawn Tucker</span>
-                                        <span class="block font-medium">Reeds Spring, MO</span>
-                                    </div>
-
-                                    <!-- Social Icon -->
-                                    <div class="flex-shrink-0">
-                                        <span class="sr-only">None</span>
-                                        
-                                    
-                                    </div>
-                                </footer>
-                            </blockquote>
-                        </li>
-                    
-                    
-                </ul>
-            
-                <!-- Single Testimonial Column -->
-                <ul class="space-y-8">
-                    <!-- Loop each of the items (rows) here -->
-                    
-                    
-                    
-
-                        <!-- Review Item -->
-                        <li class=" block  px-6 py-8 rounded-lg shadow md:px-8 xl:pl-16 xl:pr-6 bg-gray-50">
-                            <!-- Star Rating -->
-                            <div class="flex">
-                                <div aria-hidden="true" class="space-x-1.5 flex">
-                                    <!-- TODO: Simply use a for loop here `for i = 1; i < amountOfStars; i++` -->
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                </div>
-                                <!-- TODO: Add the current amount of stars here -->
-                                <span class="sr-only"> out of 5 stars</span>
-                            </div>
-
-                            <blockquote class="mt-6">
-                                <div class="relative">
-                                    <svg
-                                        aria-hidden="true"
-                                        class="absolute top-0 left-0 w-8 h-8 text-gray-200 -translate-x-3 -translate-y-2"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4Zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4Z"
-                                            fill="currentColor"
-                                        />
-                                    </svg>
-                                    <p lorem="1" class="relative text-lg font-medium">
-                                        Man is great. Does everything pvecisely, and takes his time to make it look brand new. My 1995 mustang was trashed and he made it look like it was from 2021!!
-                                    </p>
-                                </div>
-                                <footer class="flex items-center justify-between mt-8 space-x-4">
-                                    <div>
-                                        <span class="block font-medium text-primary">Blandy Burall II</span>
-                                        <span class="block font-medium">Reeds Spring, MO</span>
-                                    </div>
-
-                                    <!-- Social Icon -->
-                                    <div class="flex-shrink-0">
-                                        <span class="sr-only">None</span>
-                                        
-                                    
-                                    </div>
-                                </footer>
-                            </blockquote>
-                        </li>
-                    
-                    
-                    
-
-                        <!-- Review Item -->
-                        <li class=" hidden sm:block  px-6 py-8 rounded-lg shadow md:px-8 xl:pl-16 xl:pr-6 bg-gray-50">
-                            <!-- Star Rating -->
-                            <div class="flex">
-                                <div aria-hidden="true" class="space-x-1.5 flex">
-                                    <!-- TODO: Simply use a for loop here `for i = 1; i < amountOfStars; i++` -->
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                </div>
-                                <!-- TODO: Add the current amount of stars here -->
-                                <span class="sr-only"> out of 5 stars</span>
-                            </div>
-
-                            <blockquote class="mt-6">
-                                <div class="relative">
-                                    <svg
-                                        aria-hidden="true"
-                                        class="absolute top-0 left-0 w-8 h-8 text-gray-200 -translate-x-3 -translate-y-2"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4Zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4Z"
-                                            fill="currentColor"
-                                        />
-                                    </svg>
-                                    <p lorem="1" class="relative text-lg font-medium">
-                                        Peter described all my price options up front given my truck is a bit older and I appreciate the constant communication he kept with me til I came to pick up.  I was surprised by how detailed he was with the detailing! Thanks man!
-                                    </p>
-                                </div>
-                                <footer class="flex items-center justify-between mt-8 space-x-4">
-                                    <div>
-                                        <span class="block font-medium text-primary">Fox Finds</span>
-                                        <span class="block font-medium">Reeds Spring, MO</span>
-                                    </div>
-
-                                    <!-- Social Icon -->
-                                    <div class="flex-shrink-0">
-                                        <span class="sr-only">None</span>
-                                        
-                                    
-                                    </div>
-                                </footer>
-                            </blockquote>
-                        </li>
-                    
-                    
-                </ul>
-            
-                <!-- Single Testimonial Column -->
-                <ul class="space-y-8">
-                    <!-- Loop each of the items (rows) here -->
-                    
-                    
-                    
-
-                        <!-- Review Item -->
-                        <li class=" block  px-6 py-8 rounded-lg shadow md:px-8 xl:pl-16 xl:pr-6 bg-gray-50">
-                            <!-- Star Rating -->
-                            <div class="flex">
-                                <div aria-hidden="true" class="space-x-1.5 flex">
-                                    <!-- TODO: Simply use a for loop here `for i = 1; i < amountOfStars; i++` -->
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                </div>
-                                <!-- TODO: Add the current amount of stars here -->
-                                <span class="sr-only"> out of 5 stars</span>
-                            </div>
-
-                            <blockquote class="mt-6">
-                                <div class="relative">
-                                    <svg
-                                        aria-hidden="true"
-                                        class="absolute top-0 left-0 w-8 h-8 text-gray-200 -translate-x-3 -translate-y-2"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4Zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4Z"
-                                            fill="currentColor"
-                                        />
-                                    </svg>
-                                    <p lorem="1" class="relative text-lg font-medium">
-                                        I don&#x27;t think my jeep looked this nice when I pulled it off of the car lot. Detail on Demand did an above and beyond PHENOMENAL job
-                                    </p>
-                                </div>
-                                <footer class="flex items-center justify-between mt-8 space-x-4">
-                                    <div>
-                                        <span class="block font-medium text-primary">Olivia Skylar Elliott</span>
-                                        <span class="block font-medium">Reeds Spring, MO</span>
-                                    </div>
-
-                                    <!-- Social Icon -->
-                                    <div class="flex-shrink-0">
-                                        <span class="sr-only">None</span>
-                                        
-                                    
-                                    </div>
-                                </footer>
-                            </blockquote>
-                        </li>
-                    
-                    
-                    
-
-                        <!-- Review Item -->
-                        <li class=" hidden sm:block  px-6 py-8 rounded-lg shadow md:px-8 xl:pl-16 xl:pr-6 bg-gray-50">
-                            <!-- Star Rating -->
-                            <div class="flex">
-                                <div aria-hidden="true" class="space-x-1.5 flex">
-                                    <!-- TODO: Simply use a for loop here `for i = 1; i < amountOfStars; i++` -->
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                        <svg class="text-yellow-300" width="30" height="30" fill="none">
-                                            <path
-                                                d="M14.049 2.927c.3-.921 1.603-.921 1.902 0l2.192 6.747a1 1 0 0 0 .951.69h7.094c.969 0 1.372 1.24.588 1.81l-5.74 4.17a1 1 0 0 0-.362 1.117l2.192 6.747c.3.922-.755 1.688-1.54 1.118l-5.738-4.17a1 1 0 0 0-1.176 0l-5.739 4.17c-.784.57-1.838-.197-1.539-1.118l2.192-6.746a1 1 0 0 0-.363-1.119l-5.739-4.17c-.784-.569-.38-1.808.588-1.808h7.094a1 1 0 0 0 .95-.691l2.193-6.747Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    
-                                </div>
-                                <!-- TODO: Add the current amount of stars here -->
-                                <span class="sr-only"> out of 5 stars</span>
-                            </div>
-
-                            <blockquote class="mt-6">
-                                <div class="relative">
-                                    <svg
-                                        aria-hidden="true"
-                                        class="absolute top-0 left-0 w-8 h-8 text-gray-200 -translate-x-3 -translate-y-2"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4Zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4Z"
-                                            fill="currentColor"
-                                        />
-                                    </svg>
-                                    <p lorem="1" class="relative text-lg font-medium">
-                                        I have had my car for 4 years and I have never gotten it detailed. I also have had my dog that long and my car was jam packed with dog hair! Let me tell you, they got every piece of dog hair out of my car and it looks brand new! I am so so so happy with the job they did and it was well worth the price I paid! They drove to me and they also took way less time than I thought they would! I highly recommend their services!
-                                    </p>
-                                </div>
-                                <footer class="flex items-center justify-between mt-8 space-x-4">
-                                    <div>
-                                        <span class="block font-medium text-primary">Micah Keeton</span>
-                                        <span class="block font-medium">Reeds Spring, MO</span>
-                                    </div>
-
-                                    <!-- Social Icon -->
-                                    <div class="flex-shrink-0">
-                                        <span class="sr-only">None</span>
-                                        
-                                    
-                                    </div>
-                                </footer>
-                            </blockquote>
-                        </li>
-                    
-                    
-                </ul>
             
             
         </div>
@@ -3281,6 +2574,7 @@
                           
                           
                           
+                          
                           <li>
                               <a
                                   href='sitemap.xml'
@@ -3288,6 +2582,7 @@
                                   >Sitemap</a
                               >
                           </li>
+                          
                       </ul>
                   </div>
                   <!-- Services Links -->
@@ -3375,63 +2670,35 @@
                   <div class="mt-12 md:mt-0">
                       <h3 class="text-sm font-semibold tracking-wider text-gray-100 uppercase">Hours</h3>
                       <ul role="list" class="mt-4 -mx-1 space-y-4">
-                          
-                          <li>
-                              <a
-                                  href="#"
-                                  class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75"
-                                  >Sun: 8:00am - 6:00pm</a
-                              >
-                          </li>
-                          
-                          <li>
-                              <a
-                                  href="#"
-                                  class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75"
-                                  >Mon: 8:00am - 6:00pm</a
-                              >
-                          </li>
-                          
-                          <li>
-                              <a
-                                  href="#"
-                                  class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75"
-                                  >Tues: 8:00am - 6:00pm</a
-                              >
-                          </li>
-                          
-                          <li>
-                              <a
-                                  href="#"
-                                  class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75"
-                                  >Wed: 0:00am - 0:00am</a
-                              >
-                          </li>
-                          
-                          <li>
-                              <a
-                                  href="#"
-                                  class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75"
-                                  >Thu: 0:00am - 0:00am</a
-                              >
-                          </li>
-                          
-                          <li>
-                              <a
-                                  href="#"
-                                  class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75"
-                                  >Fri: 8:00am - 6:00pm</a
-                              >
-                          </li>
-                          
-                          <li>
-                              <a
-                                  href="#"
-                                  class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75"
-                                  >Sat: 8:00am - 6:00pm</a
-                              >
-                          </li>
-                          
+                        
+                            <li class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75">
+                                Sun:  None 
+                            </li>
+                        
+                            <li class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75">
+                                Mon:  None 
+                            </li>
+                        
+                            <li class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75">
+                                Tues:  None 
+                            </li>
+                        
+                            <li class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75">
+                                Wed:  None 
+                            </li>
+                        
+                            <li class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75">
+                                Thu:  None 
+                            </li>
+                        
+                            <li class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75">
+                                Fri:  None 
+                            </li>
+                        
+                            <li class="p-1 text-base text-gray-100 rounded  hover:text-gray-300 focus:ring-2 focus:outline-none ring-white ring-offset-2 ring-opacity-75">
+                                Sat:  None 
+                            </li>
+                        
                       </ul>
                   </div>
               </div>
@@ -3496,7 +2763,7 @@
                 x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
                 x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                 @click="contactModalOpen = false"
-                class="relative flex items-center justify-center w-full h-full sm:h-max"
+                class="relative flex items-center justify-center w-full h-full"
         >
             <div
                     @click.stop
@@ -3521,7 +2788,7 @@
 
                 <!-- Form -->
 
-                <form class="overflow-y-scroll pb-12 sm:w-full">
+                <form class="overflow-y-scroll pb-20 sm:w-full">
                     <div class="flex-grow h-full overflow-x-hidden overflow-y-auto">
                         <div class="h-full px-6 pb-1 mt-6 space-y-6 sm:grid sm:grid-cols-2 sm:min-w-max sm:space-x-3">
                             <!-- Full Name -->
@@ -3609,8 +2876,7 @@
                                 
                                 <fieldset class="hidden sm:block sm:mb-3">
                                     <legend class="text-base font-medium text-gray-900">Services</legend>
-                                    <div class="my-2.5 grid gap-y-3.5 grid-cols-2 sm:flex sm:space-x-6">
-
+                                    <div class="my-2.5 grid gap-y-3.5 grid-cols-2 ">
                                         
                                         <div class="flex items-center">
                                             <input
@@ -3893,8 +3159,6 @@
                                 items-center
                                 justify-center
                                 w-full
-                                my-4
-                                mx-12
                             "
                      onclick="send_sms('6fc9ccd2-ef28-4fcc-b4c2-2ae057077ef9')"
                 >
@@ -3930,6 +3194,38 @@
         </div>
     </div>
 </template>
+<div
+	class="fixed top-36 inset-x-0 z-50 mx-auto p-4 border w-96 shadow-lg rounded-md bg-white backdrop-blur-sm"
+    id="text-thank-you"
+    style="display: none"
+>
+	<div class="mt-3 text-center">
+		<div
+			class="mx-auto mb-3 flex items-center justify-center h-12 w-12 rounded-full bg-green-100"
+		>
+			<svg
+				class="h-6 w-6 text-green-600"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M5 13l4 4L19 7"
+				></path>
+			</svg>
+		</div>
+		<h3 class="text-lg leading-6 font-medium text-gray-900">Thank you!</h3>
+		<div class="mt-1 px-7 py-3">
+			<p class="text-sm text-gray-500">
+				Your message was sent successfully. We’ll send you a text or give you a call soon.
+			</p>
+		</div>
+	</div>
+</div>
 <!-- Modal -->
 <template x-teleport="body">
     <div x-show="reviewModalOpen" @keydown.escape.prevent.stop="reviewModalOpen = false" role="dialog" aria-modal="true" x-id="['modal-title']" :aria-labelledby="$id('modal-title')" class="fixed inset-0 z-40 pt-8 pb-20" x-trap.noscroll.inert="reviewModalOpen">
